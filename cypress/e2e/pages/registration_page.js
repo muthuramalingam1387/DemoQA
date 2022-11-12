@@ -7,6 +7,7 @@ export class RegistrationPage{
     salary_id = '#salary'
     department_id = '#department'
     submit_id = '#submit'
+    edit_row = '.mr-2'
 
     firstname = "Alden"
     lastname = "Cantrell"
@@ -97,7 +98,7 @@ export class RegistrationPage{
     }
 
     editRow2(){
-        cy.get('.mr-2')
+        cy.get(this.edit_row)
         .eq(1)
         .click()
     }

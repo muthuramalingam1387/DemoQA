@@ -1,28 +1,34 @@
 export class Elements{
 
+    webTable = '.btn.btn-light'
+    addButton = '#addNewRecordButton'
+    clickbrokenImage = '.btn.btn-light'
+    brokenImage = 'img[src="/images/Toolsqa_1.jpg"]'
+
+
     clickWebTables(){
         cy
-        .get('.btn.btn-light')
+        .get(this.webTable)
         .eq(3)
         .click()
     }
 
     clickAddButton(){
         cy
-        .get('#addNewRecordButton')
+        .get(this.addButton)
         .click()
     }
 
     clickBrokenImage(){
         cy
-        .get('.btn.btn-light')
+        .get(this.clickbrokenImage)
         .eq(6)
         .click()
     }
 
     checkBrokenImage(){
-        
-        cy.get('img[src="/images/Toolsqa_1.jpg"]')
+
+        cy.get(this.brokenImage)
         .should('be.visible')
         .should(([img]) => {
             expect(img.naturalWidth).to.be.greaterThan(0)
