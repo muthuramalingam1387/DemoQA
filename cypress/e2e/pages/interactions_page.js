@@ -1,24 +1,26 @@
 export class Interactions{
 
+    clickDroppableBtn = '.btn.btn-light '
+    droppableText = 'Droppable'
+    draggable = '#draggable'
+    dragMe = 'Drag me'
+    droppable = '#droppable'
+    dropHere = 'Drop here'
 
     clickDroppable(){
-        cy.get('.btn.btn-light ')
-        .contains('Droppable')
+        cy.get(this.clickDroppableBtn)
+        .contains(this.droppableText)
         .click()
     }
 
     performDragDrop(){
 
-
-        cy.get('#draggable').contains('Drag me')
-        // cy.get('.list .item').contains('#draggable')
+        cy.get(this.draggable).contains(this.dragMe)
         .trigger('dragstart', { dataTransfer: new DataTransfer });
         
-        cy.get('#droppable').contains('Drop here')
-        // cy.get('.list .item').eq('#droppable')
+        cy.get(this.droppable).contains(this.dropHere)
         .trigger('drop')
         .trigger('dragend');
-
 
     }
         

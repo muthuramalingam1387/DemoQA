@@ -10,8 +10,20 @@ export class FormsPage{
     dob = '15th January 1990'
     subjects = "Cypress Assignment"
     currentAddress = "Netherlands"
-
     practiceForm = '.btn.btn-light'
+    genderSelect = '.custom-control-label'
+    mobileNumer = '[placeholder="Mobile Number"]'
+    subject = '.subjects-auto-complete__value-container'
+    hobbies = '.custom-control.custom-checkbox.custom-control-inline'
+    uploadPic = '#uploadPicture'
+    imageFile = 'E:/Automation/Cypress/Project1/test-automation.jpg'
+    currentAddrs = '#currentAddress'
+    state = '.col-md-4.col-sm-12'
+    city = '#react-select-4-option-0'
+    submit = '#submit'
+    closeBtn = '#closeLargeModal'
+
+
 
     clickpracticeform(){
         cy.get(this.practiceForm).contains('Practice Form')
@@ -20,13 +32,13 @@ export class FormsPage{
     }
 
     clickGenderMale(){
-        cy.get('.custom-control-label')
+        cy.get(this.genderSelect)
         .eq(0)
         .click()
     }
 
     enterMobileNumber(mobilenumber){
-        cy.get('[placeholder="Mobile Number"]')
+        cy.get(this.mobileNumer)
         .type(mobilenumber)
     }
     
@@ -55,55 +67,55 @@ export class FormsPage{
     }
 
     enterSubject(subjects){
-        cy.get('.subjects-auto-complete__value-container')
+        cy.get(this.subject)
         .type(subjects)
-    }Netherlands
+    }
 
     selectHobbies(){
-        cy.get('.custom-control.custom-checkbox.custom-control-inline').eq(1)
+        cy.get(this.hobbies).eq(1)
         .click()
     }
 
     uploadPicture(){
 
-        cy.get('#uploadPicture')
-        .selectFile('E:/Automation/Cypress/Project1/test-automation.jpg', { force: true })
+        cy.get(this.uploadPic)
+        .selectFile(this.imageFile, { force: true })
     }
 
     enterCurrentAddress(currentAddress){
-        cy.get('#currentAddress')
+        cy.get(this.currentAddrs)
         .type(currentAddress)
     }
 
     
     selectState(){
-        cy.get('.col-md-4.col-sm-12').eq(0)
+        cy.get(this.state).eq(0)
         .click()
 
         
-        cy.get('.col-md-4.col-sm-12').contains('NCR')
+        cy.get(this.state).contains('NCR')
         .then(option => { 
       
             option[0].click(); 
         })
 
-        cy.get('.col-md-4.col-sm-12').eq(1)
+        cy.get(this.state).eq(1)
         .click()
 
-        cy.get('#react-select-4-option-0').click()
+        cy.get(this.city).click()
     
     }
 
     clickSubmit(){
         
-        cy.focused('#submit').tab()
+        cy.focused(this.submit).tab()
         .click({force: true})
         
 
     }
 
     clickClose(){
-        cy.get('#closeLargeModal')
+        cy.get(this.closeBtn)
         .click()
     }
 
