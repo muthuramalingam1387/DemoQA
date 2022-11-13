@@ -11,7 +11,7 @@ import { Interactions } from "./pages/interactions_page"
 
 const homepage = new HomePage()
 const elements = new Elements()
-const registrationpage = new RegistrationPage() 
+const registrationpage = new RegistrationPage()
 const commonfun = new Common()
 const formspage = new FormsPage()
 const widgetspage = new WidgetsPage()
@@ -85,6 +85,7 @@ describe('DemoQA', function(){
         formspage.selectDate()
         formspage.enterSubject(formspage.subjects)
         formspage.selectHobbies()
+        formspage.uploadPicture()
         formspage.enterCurrentAddress(formspage.currentAddress)
         formspage.selectState()
         formspage.clickSubmit()

@@ -65,6 +65,12 @@ export class FormsPage{
         .click()
     }
 
+    uploadPicture(){
+
+        cy.get('#uploadPicture')
+        .selectFile('E:/Automation/Cypress/Project1/test-automation.jpg', { force: true })
+    }
+
     enterCurrentAddress(currentAddress){
         cy.get('#currentAddress')
         .type(currentAddress)

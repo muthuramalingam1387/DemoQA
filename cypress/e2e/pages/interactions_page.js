@@ -10,7 +10,7 @@ export class Interactions{
     performDragDrop(){
 
         cy.get('#draggable')
-        .trigger('pointerdown', { button: -2 })
+        .trigger('pointerdown', { button: 0})
         .trigger('dragstart');
         
         cy.get('#droppable')
