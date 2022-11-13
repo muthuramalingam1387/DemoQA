@@ -5,18 +5,17 @@ var datePickerPage = new DatePickerPage();
 
 export class FormsPage{
 
-    
 
     mobilenumber = "0123456789"
     dob = '15th January 1990'
     subjects = "Cypress Assignment"
     currentAddress = "Netherlands"
 
+    practiceForm = '.btn.btn-light'
+
     clickpracticeform(){
-        // cy.get('.element-listcollapse.show')
-        cy.get(':nth-child(2) > .element-list > .menu-list > #item-0 > .text')
+        cy.get(this.practiceForm).contains('Practice Form')
         .should('be.visible')
-        // .find('.btn.btn-light.active')
         .click()
     }
 
@@ -92,22 +91,20 @@ export class FormsPage{
         .click()
 
         cy.get('#react-select-4-option-0').click()
-        
-        // cy.get('.col-md-4.col-sm-12').eq(1)
-        // .tab().click()
     
     }
 
     clickSubmit(){
         
-        cy.focused('#submit').tab().click({force: true})
+        cy.focused('#submit').tab()
+        .click({force: true})
         
 
-        // cy.get('#submit').click()
     }
 
     clickClose(){
-        cy.get('#closeLargeModal').click()
+        cy.get('#closeLargeModal')
+        .click()
     }
 
 }

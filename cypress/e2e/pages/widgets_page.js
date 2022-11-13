@@ -17,7 +17,7 @@ export class WidgetsPage{
         .contains('100%').should('be.visible')
         
         cy.get('.progress-bar.bg-success')
-        .should('have.css', 'color', 'rgb(255, 255, 255)')
+        .should('have.css', 'background-color', 'rgb(40, 167, 69)')
 
     }
 

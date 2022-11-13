@@ -18,7 +18,7 @@ const widgetspage = new WidgetsPage()
 const interactionspage = new Interactions()
 
 
-before(function() {
+beforeEach(function() {
 
     commonfun.homePage()
 
@@ -43,26 +43,21 @@ describe('DemoQA', function(){
         registrationpage.clickSubmit()
         commonfun.assetionTableNew()
 
-    })
 
-    it('Verify user can edit the row in a table', function(){
-        
         registrationpage.editRow2()
-
         registrationpage.clearFirstName()
         registrationpage.updateFirstName(registrationpage.updateFName)
         registrationpage.clearLastName()
         registrationpage.updateLastName(registrationpage.updateLName)
         registrationpage.clickSubmit()
         commonfun.assetionTableUpdate()
-
+    
 
     })
 
 
     it('Verify broken image', function(){
 
-        commonfun.homePage()
         homepage.clickElements()
         elements.clickBrokenImage()
         elements.checkBrokenImage()
@@ -70,10 +65,8 @@ describe('DemoQA', function(){
 
     })
 
-
     it('Verify user can submit the form', function(){
 
-        commonfun.homePage()
         homepage.clickForms()
         formspage.clickpracticeform()
         registrationpage.updateFirstName(registrationpage.updateFName)
@@ -96,7 +89,6 @@ describe('DemoQA', function(){
 
     it('Verify the progress bar', function(){
 
-        commonfun.homePage()
         homepage.clickWidgets()
         widgetspage.clickProgressBar()
         widgetspage.clickStartBtn()
@@ -106,7 +98,6 @@ describe('DemoQA', function(){
 
     it('Verify the tooltip', function(){
         
-        commonfun.homePage()
         homepage.clickWidgets()
         widgetspage.clickToolTips()
         widgetspage.hoverButton()
@@ -116,72 +107,11 @@ describe('DemoQA', function(){
 
     it('Verify user can drag and drop', function(){
         
-        commonfun.homePage()
         homepage.clickInteractions()
         interactionspage.clickDroppable()
         interactionspage.performDragDrop()
 
 
-    })
-        
-
-
-
-// ###################################
-        // cy
-        // .get('.modal-body').find('#firstName')
-        // .invoke('text')
-        // .then((text) => {
-        //     cy.log(text)
-          
-        //   if (text.includes('Alden')) {
-            // cy.get('.btn.btn-xs.btn-edit').click()
-            // cy.log(text)
-        //   }
-
-
-
-
-        // .then((fn) => {
-        //         // console.log('name is:', $form)
-        //         cy.log(fn)
-        //         var name = fn.text()
-        //             cy.log(name)
-
-        // cy
-        // .get('#firstName-wrapper')
-        // .invoke('attr', 'value')
-        // .should('equal', 'Alden')
-
-        // cy.get('#firstName')
-        // .invoke('show')
-        // .then((fn) => {
-        //     // console.log('name is:', $form)
-        //     cy.log(fn)
-        //     var name = fn.text()
-        //     cy.log(name)
-
-        // })
-        // .find('#firstName')
-        // .contains("Alden")
-        // .find('[value="Alden"]')
-        // .contains(registrationpage.firstname)
-        // .should('be.visible')
-        // .then((fn) => {
-
-        //     cy
-        //     .expect(fn).to.equal(registrationpage.firstname)
-
-        // })
-        
-        
-
-        // cy
-
-
-// ######################################
-
-        
-
+    })   
 
 })

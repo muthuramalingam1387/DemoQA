@@ -27,53 +27,5 @@ export class Common{
     }
 
 
-    // selectYear(){
-
-    //     cy.get('#dateOfBirthInput').click()
-
-    //     cy.get('.react-datepicker__year-select')
-    //     .should('be.visible')
-    //     .get('.react-datepicker__year-select').select(1990)
-    //         // .each(($el,index,$list)=>{
-    //         //     var yearName = $el.text()
-    //         //     if(yearName == '1990')
-    //         //     {
-    //         //         cy.wrap($el).click()
-    //         //     }
-    //         // })        
-
-    // }
-
-    // selectMonth(){
-
-    //     cy.get('.react-datepicker__month-select')
-    //     .should('be.visible')
-    //     cy.find('.react-datepicker__month-select').select('January')
-    //         // .each(($el,index,$list)=>{
-    //         //     var monthName = $el.text()
-    //         //     if(monthName == 'January')
-    //         //     {
-    //         //         cy.wrap($el).click()
-    //         //     }
-    //         // })
-
-    // }
-
-    // selectdate(){
-
-    //     cy.get('.react-datepicker__week')
-    //     .should('be.visible')
-    //     .find('.react-datepicker__week')
-    //     .eq(2).select(15)
-    //         // .each(($el,index,$list)=>{
-    //         //     var dateName = $el.text()
-    //         //     if(dateName == '15')
-    //         //     {
-    //         //         cy.wrap($el).click()
-    //         //     }
-    //         // })   
-
-    // }
-
 
 }

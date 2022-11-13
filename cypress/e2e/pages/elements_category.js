@@ -31,8 +31,9 @@ export class Elements{
         cy.get(this.brokenImage)
         .should('be.visible')
         .should(([img]) => {
-            expect(img.naturalWidth).to.be.greaterThan(0)
-            expect(img.naturalHeight).to.be.greaterThan(0)
+            // expect(img.naturalWidth).to.be.greaterThan(0)
+            expect(img.naturalWidth).to.be.eq(0)
+            // expect(img.naturalHeight).to.be.greaterThan(0)
 
         });
     }
